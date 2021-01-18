@@ -23,7 +23,7 @@ image: https://alleyful.github.io/images/gallery/thumbnails/react.jpg
 코드를 작성하다보면 함수를 만들게 되고, 그 함수는 복잡한 연산을 가진 경우가 많이 있습니다.
 이 때 useMemo는 함수의 반환 값을 기억하여 재활용하는 용도로 사용됩니다.
 
-간단한 예시를 살펴보려고 합니다.
+간단한 예시를 살펴 보려고 합니다.
 ```jsx
 import React, { useState, useMemo } from 'react'
 

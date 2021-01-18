@@ -1,0 +1,441 @@
+I"V�<h1 id="타입스크립트의-기본-타입">타입스크립트의 기본 타입</h1>
+<hr />
+<p>타입스크립트의 기본 타입은 12가지가 있습니다.</p>
+
+<blockquote>
+  <ol>
+    <li>String</li>
+    <li>Number</li>
+    <li>Boolean</li>
+    <li>Null</li>
+    <li>Undefined</li>
+    <li>Object</li>
+    <li>Array</li>
+    <li>Tuple</li>
+    <li>Void</li>
+    <li>Never</li>
+    <li>Enum</li>
+    <li>Any</li>
+  </ol>
+</blockquote>
+
+<h1 id="타입-명시-type-annotation">타입 명시 (Type Annotation)</h1>
+<hr />
+<p>변수를 선언할 때, 변수 값의 타입을 명시함으로써 변수 값의 데이터 타입을 지정하는 것입니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="c1">// syntax</span>
+<span class="kd">let</span> <span class="nx">x</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">나는 문자열 타입</span><span class="dl">'</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위 코드에서 처럼 <code class="language-plaintext highlighter-rouge">:</code>를 이용해서 자바스크립트 코드에 타입을 정의하는 방식을 타입명시, 타입표기 라고 합니다</p>
+
+<h2 id="string">String</h2>
+<p>문자 뜻 그대로 string, 문자열을 뜻한다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">name</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Jotang</span><span class="dl">'</span>
+
+<span class="c1">// 문자열 리터럴 타입</span>
+<span class="kd">let</span> <span class="nx">city</span><span class="p">:</span> <span class="dl">'</span><span class="s1">부산</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">서울</span><span class="dl">'</span>
+<span class="nx">city</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">김포</span><span class="dl">'</span>   <span class="c1">// 타입에러, '부산' 또는 '서울'만 가능</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>문자열 리터럴로 타입을 정의하게 되면, 해당 변수에는 지정된 타입의 문자만 할당 될 수 있습니다.</p>
+
+<h2 id="number">Number</h2>
+<p>이것 또한 문자 뜻 그대로 number, 숫자를 뜻한다</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">age</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="c1">// 숫자 리터럴 타입</span>
+<span class="kd">let</span> <span class="nx">time</span><span class="p">:</span> <span class="mi">10</span> <span class="o">|</span> <span class="mi">11</span> <span class="o">|</span> <span class="mi">12</span>
+<span class="nx">time</span> <span class="o">=</span> <span class="mi">9</span>   <span class="c1">// 타입에러, 10, 11 또는 12만 가능</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>문자열 리터럴 타입과 같이, 해당 변수에는 지정된 타입의 숫자만 할당 될 수 있습니다.</p>
+
+<h2 id="boolean">Boolean</h2>
+<p>참, 거짓의 진위값에 대한 타입</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">isMarried</span><span class="p">:</span> <span class="nx">boolean</span> <span class="o">=</span> <span class="kc">false</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="null--undefined">Null &amp; Undefined</h2>
+<p>타입스크립트에서는 자바스크립트에서 값으로 존재하는 <code class="language-plaintext highlighter-rouge">null</code>과 <code class="language-plaintext highlighter-rouge">undefined</code>는 각각의 타입으로 존재하게 됩니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">milk</span><span class="p">:</span> <span class="kc">undefined</span> <span class="o">=</span> <span class="kc">undefined</span>
+<span class="kd">let</span> <span class="nx">candy</span><span class="p">:</span> <span class="kc">null</span> <span class="o">=</span> <span class="kc">null</span>
+
+<span class="nx">milk</span> <span class="o">=</span> <span class="kc">true</span>      <span class="c1">// 타입에러</span>
+<span class="nx">candy</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">candy</span><span class="dl">'</span>  <span class="c1">// 타입에러</span>
+
+<span class="kd">let</span> <span class="nx">food</span><span class="p">:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span> <span class="o">=</span> <span class="kc">null</span>
+<span class="nx">food</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">rice</span><span class="dl">'</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">null</code>과 <code class="language-plaintext highlighter-rouge">undefined</code>는 각각의 타입으로 존재하기 때문에, 다른 타입을 할당하게되면 타입에러를 내뿜게 됩니다.</p>
+
+<p>따라서 아래 <code class="language-plaintext highlighter-rouge">let food: string | null = null</code>와 같이 다른 타입과 함께 유니온 타입으로 정의할 때 많이 사용되게 됩니다.</p>
+
+<h2 id="object">Object</h2>
+<p>자바스크립트에서 일반적으로 사용되는 객체의 타입입니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">human</span><span class="p">:</span> <span class="nx">object</span>
+
+<span class="nx">human</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Jotang</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+  <span class="na">isMarried</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">human</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>   <span class="c1">// 타입에러</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">human</span><span class="p">.</span><span class="nx">age</span><span class="p">)</span>   <span class="c1">// 타입에러</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">human</span><span class="p">.</span><span class="nx">isMarried</span><span class="p">)</span>   <span class="c1">// 타입에러</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>객체의 속성에 대한 타입 정보가 없기 때문에, 특정 속성값에 접근하면 타입에러가 발생하게 됩니다. 객체내의 속성 정보를 포함하여 타입을 정의하기 위해서는 <code class="language-plaintext highlighter-rouge">인터페이스(interface)</code>를 사용해야 하는데, 인터페이스에 대해서는 추후에 더 자세히 알아보도록 하겠습니다.</p>
+
+<h2 id="array">Array</h2>
+<p>배열 타입은 두 가지의 방법으로 정의할 수 있습니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">lotto</span><span class="p">:</span> <span class="kr">number</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="nx">또는</span>
+
+<span class="kd">let</span> <span class="nx">lotto</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="kr">number</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>숫자 배열에 문자열을 입력하면 타입에러가 발생하게 됩니다. 예를 들어</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">lotto</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">'</span><span class="s1">로또</span><span class="dl">'</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>문자열을 lotto배열에 push하게 되면, 숫자 배열에 문자열을 추가하려는 것이기 때문에, 타입에러가 발생하게 됩니다.</p>
+
+<h2 id="tuple">Tuple</h2>
+<p>튜플은 조금 생소한 타입일 수 있습니다.
+튜플은 배열과 유사하지만, 배열의 길이가 고정되고 각 요소의 타입이 지정되어 있는 배열의 형식을 의미합니다.</p>
+
+<p>아래의 코드로 예시를 들어보도록 하겠습니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">lotto</span><span class="p">:</span> <span class="p">[</span><span class="kr">string</span><span class="p">,</span> <span class="kr">number</span><span class="p">,</span> <span class="kr">number</span><span class="p">,</span> <span class="kr">string</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">로또</span><span class="dl">'</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="dl">'</span><span class="s1">실패</span><span class="dl">'</span><span class="p">]</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>튜플 타입은 정확히 명시된 개수 만큼의 원소만을 가질 수 있습니다. 만약 타입 정의보다 더 많은, 혹은 더 적은 원소를 갖는 배열을 할당한다면 에러를 낸다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">lotto</span><span class="p">:</span> <span class="p">[</span><span class="kr">string</span><span class="p">,</span> <span class="kr">number</span><span class="p">,</span> <span class="kr">number</span><span class="p">,</span> <span class="kr">string</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">로또</span><span class="dl">'</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">39</span><span class="p">]</span>
+<span class="c1">// Type '[string, number, number]' is not assignable to type '[string, number, number, string]'.</span>
+<span class="c1">// Source has 3 element(s) but target requires 4.</span>
+
+<span class="kd">let</span> <span class="nx">lotto</span><span class="p">:</span> <span class="p">[</span><span class="kr">string</span><span class="p">,</span> <span class="kr">number</span><span class="p">,</span> <span class="kr">number</span><span class="p">,</span> <span class="kr">string</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">로또</span><span class="dl">'</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="dl">'</span><span class="s1">실패</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">성공</span><span class="dl">'</span><span class="p">]</span>
+<span class="c1">// Type '[string, number, number, string, string]' is not assignable to type '[string, number, number, string]'.</span>
+<span class="c1">// Source has 5 element(s) but target allows only 4.</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>그리고 튜플의 원소에 인덱스로 접근할 경우, 해당 원소의 타입이 아니라면 타입에러가 발생하게 됩니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">lotto</span><span class="p">:</span> <span class="p">[</span><span class="kr">string</span><span class="p">,</span> <span class="kr">number</span><span class="p">,</span> <span class="kr">number</span><span class="p">,</span> <span class="kr">string</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">로또</span><span class="dl">'</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="dl">'</span><span class="s1">실패</span><span class="dl">'</span><span class="p">]</span>
+
+<span class="nx">lotto</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">문자!</span><span class="dl">'</span>
+<span class="c1">// Type 'string' is not assignable to type 'number'.</span>
+
+<span class="nx">lotto</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">substr</span><span class="p">()</span>
+<span class="c1">// Property 'substr' does not exist on type 'number'.</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>문자열과 숫자로 구성된 튜플타입에 boolean을 넣으려고 한다면, 에러가 발생하게 됩니다.</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">lotto</span><span class="p">:</span> <span class="p">[</span><span class="kr">string</span><span class="p">,</span> <span class="kr">number</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">로또</span><span class="dl">'</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+
+<span class="nx">lotto</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+<span class="c1">//Argument of type 'boolean' is not assignable to parameter of type 'string | number'.</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="void">Void</h2>
+<p>함수가 아무것도 반환하지 않는 함수에 사용됩니다.</p>
+
+<p>타입스크립트에서 함수의 타입을 지정할 때는, 매개변수 타입과 반환 타입이 필요합니다.</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="c1">// systax</span>
+<span class="kd">function</span> <span class="nx">test</span><span class="p">(</span><span class="nx">a</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">b</span><span class="p">:</span> <span class="kr">number</span><span class="p">):</span> <span class="kr">number</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">test1</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">b</span><span class="p">:</span> <span class="kr">number</span><span class="p">):</span> <span class="kr">number</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>반환 타입의 경우에는 꼭 타입을 꼭 명시하지 않아도 무방합니다. 타입스크립트는 타입추론이라는 것을 통해서 함수가 반환하는 타입을 자동으로 확인하여 설정하여 줍니다. 특별한 경우가 아니라면 함수가 반환하는 값의 타입을 지정하지 않아도 괜찮습니다. 혹여나, 전달 받은 매개변수의 타입은 모두 number인데, string을 반환하려고 한다면, 타입에러가 발생하게 될 것 입니다.</p>
+
+<p>이처럼, 함수가 어떠한 값을 반환을 하게 될 때에는 타입을 지정해야 할 필요가 있으나, 아무것도 반환하지 않는 함수는 <code class="language-plaintext highlighter-rouge">void</code>타입을 지정하게 됩니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">printName</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="k">void</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">printName</span><span class="p">(</span><span class="dl">'</span><span class="s1">Jotang</span><span class="dl">'</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>void가 지정된 함수는 undefined를 반환하게 됩니다. 앞서 함수에 타입을 지정할 때 처럼 타입스크립트는 아무것도 반환하지 않는 함수에 void타입을 알아서 지정해주게 됩니다. 따라서 void 타입을 별도로 지정해주지 않으셔도 괜찮습니다.</p>
+
+<h2 id="never">Never</h2>
+<p>never 타입은 절대로 발생하지 않는 값의 타입을 나타냅니다.
+never를 반환하는 함수의 몇 가지 예는 다음과 같습니다.</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="c1">// Function returning never must have unreachable end point</span>
+<span class="kd">function</span> <span class="nx">error</span><span class="p">(</span><span class="nx">message</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nx">never</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// Inferred return type is never</span>
+<span class="kd">function</span> <span class="nx">fail</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Something failed</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// Function returning never must have unreachable end point</span>
+<span class="kd">function</span> <span class="nx">infiniteLoop</span><span class="p">():</span> <span class="nx">never</span> <span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="enum">Enum</h2>
+<p>열거형타입이라고 할 수 있습니다. enum은 자바스크립트에는 없는 개념이라 다소 생소 할 수 있습니다. enum은 특정 값들의 집합을 의미하는 자료형입니다. 쉽게 이야기하면 연관된 아이템들을 함께 묶어서 표현 할 수 있는 수단이라고 할 수 있습니다.</p>
+
+<p>enum은 <code class="language-plaintext highlighter-rouge">숫자 열거형(Numberic Enum)</code>, <code class="language-plaintext highlighter-rouge">문자열 열거형(String Enum)</code> 그리고 <code class="language-plaintext highlighter-rouge">이종 열거형(Heterogeneous Enum)</code>으로 나누어 진다고 볼 수 있다. 이종 열거형의 경우는 숫자와 문자를 섞어 열거형을 만들 수는 있지만 추천하는 방법은 아니라고 합니다.</p>
+
+<p>그리고 열거형 타입의 각 원소는 값으로 사용될 수 있고, 타입으로 사용될 수도 있습니다.</p>
+
+<h4 id="숫자-열거형">숫자 열거형</h4>
+<hr />
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="kr">enum</span> <span class="nx">Hero</span> <span class="p">{</span>
+  <span class="nx">IronMan</span><span class="p">,</span>
+  <span class="nx">BlackPanther</span><span class="p">,</span>
+  <span class="nx">CaptainAmerica</span><span class="p">,</span>
+  <span class="nx">Spiderman</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">firstHero</span><span class="p">:</span> <span class="nx">Hero</span> <span class="o">=</span> <span class="nx">Hero</span><span class="p">.</span><span class="nx">IronMan</span>
+<span class="kd">const</span> <span class="nx">secondHero</span><span class="p">:</span> <span class="nx">Hero</span><span class="p">.</span><span class="nx">BlackPanther</span> <span class="o">|</span> <span class="nx">Hero</span><span class="p">.</span><span class="nx">CaptainAmerica</span> <span class="o">=</span> <span class="nx">Hero</span><span class="p">.</span><span class="nx">CaptainAmerica</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstHero</span><span class="p">,</span> <span class="nx">secondHero</span><span class="p">,</span> <span class="nx">Hero</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="c1">// 0, 2, Spiderman</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>실제로 작성한 코드를 보게 되면</p>
+
+<p><img src="https://images.velog.io/images/jotang3726/post/ef804845-e5bf-4b22-9d34-5a17f28544cc/image.png" alt="" /></p>
+
+<p>enum의 각 원소 옆에 숫자가 보이는데, 값을 할당하지 않으면 <code class="language-plaintext highlighter-rouge">자동으로 0이 할당</code>되고, <code class="language-plaintext highlighter-rouge">1씩 증가</code>한 값이 자동으로 할당 됩니다.
+명시적으로 값을 할당 할 수 있는데, 값을 할당하게 되면,</p>
+
+<p><img src="https://images.velog.io/images/jotang3726/post/43da444e-f698-416d-a3e7-400cb1b08dfb/image.png" alt="" /></p>
+
+<p>위 코드와 같이, 명시된 값이 할당되고, 그 이후는 또 1씩 증가한 값이 자동으로 할당되게 됩니다.</p>
+
+<p>다른 타입들과 달리 열거형 타입은 컴파일 후에도 관련된 코드가 남아있습니다.
+컴파일 된 js 파일을 보게 되면 확인할 수 있습니다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">Hero</span><span class="p">;</span>
+<span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">Hero</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">Hero</span><span class="p">[</span><span class="nx">Hero</span><span class="p">[</span><span class="dl">"</span><span class="s2">IronMan</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">IronMan</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">Hero</span><span class="p">[</span><span class="nx">Hero</span><span class="p">[</span><span class="dl">"</span><span class="s2">BlackPanther</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">BlackPanther</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">Hero</span><span class="p">[</span><span class="nx">Hero</span><span class="p">[</span><span class="dl">"</span><span class="s2">CaptainAmerica</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">CaptainAmerica</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">Hero</span><span class="p">[</span><span class="nx">Hero</span><span class="p">[</span><span class="dl">"</span><span class="s2">Spiderman</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Spiderman</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">})(</span><span class="nx">Hero</span> <span class="o">||</span> <span class="p">(</span><span class="nx">Hero</span> <span class="o">=</span> <span class="p">{}));</span>
+<span class="kd">var</span> <span class="nx">firstHero</span> <span class="o">=</span> <span class="nx">Hero</span><span class="p">.</span><span class="nx">IronMan</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">secondHero</span> <span class="o">=</span> <span class="nx">Hero</span><span class="p">.</span><span class="nx">CaptainAmerica</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstHero</span><span class="p">,</span> <span class="nx">secondHero</span><span class="p">,</span> <span class="nx">Hero</span><span class="p">[</span><span class="mi">3</span><span class="p">]);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>열거형 타입은 결국 객체로 존재하기 때문에, 해당 객체를 런타임에서도 사용할 수 있고,
+숫자 열거형의 경우, <code class="language-plaintext highlighter-rouge">이름과 값이 양방향으로 매핑</code>되게 됩니다. 따라서 값을 이용해서 이름을 가져올 수 있습니다.</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Hero</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">Hero</span><span class="p">.</span><span class="nx">BlackPanther</span><span class="p">,</span> <span class="nx">Hero</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span> <span class="c1">// IronMan, 4, CaptainAmerica</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="문자열-열거형">문자열 열거형</h4>
+<hr />
+<p>문자열 열거형은, 말 그대로 문자열을 할당하는 코드입니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="kr">enum</span> <span class="nx">Hero</span> <span class="p">{</span>
+  <span class="nx">IronMan</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">ironMan</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">BlackPanther</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">blackPanther</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">CaptainAmerica</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">captainAmerica</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">Spiderman</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">spiderman</span><span class="dl">'</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>컴파일 된 js 파일을 확인하면 아래 코드와 같습니다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">Hero</span><span class="p">;</span>
+<span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">Hero</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">Hero</span><span class="p">[</span><span class="dl">"</span><span class="s2">IronMan</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">ironMan</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">Hero</span><span class="p">[</span><span class="dl">"</span><span class="s2">BlackPanther</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">blackPanther</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">Hero</span><span class="p">[</span><span class="dl">"</span><span class="s2">CaptainAmerica</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">captainAmerica</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">Hero</span><span class="p">[</span><span class="dl">"</span><span class="s2">Spiderman</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">spiderman</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">})(</span><span class="nx">Hero</span> <span class="o">||</span> <span class="p">(</span><span class="nx">Hero</span> <span class="o">=</span> <span class="p">{}));</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>문자열 열거형의 경우에는 숫자 열거형과 다르게 양방향이 아니라, <code class="language-plaintext highlighter-rouge">단방향으로 매핑</code>됩니다.</p>
+
+<p>기존과 같이 console을 찍어보게 되면</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">firstHero</span><span class="p">:</span> <span class="nx">Hero</span> <span class="o">=</span> <span class="nx">Hero</span><span class="p">.</span><span class="nx">IronMan</span>
+<span class="kd">const</span> <span class="nx">secondHero</span><span class="p">:</span> <span class="nx">Hero</span><span class="p">.</span><span class="nx">BlackPanther</span> <span class="o">|</span> <span class="nx">Hero</span><span class="p">.</span><span class="nx">CaptainAmerica</span> <span class="o">=</span> <span class="nx">Hero</span><span class="p">.</span><span class="nx">CaptainAmerica</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstHero</span><span class="p">,</span> <span class="nx">secondHero</span><span class="p">,</span> <span class="nx">Hero</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="c1">// ironMan, captainAmerica, undefined</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>숫자의 값으로는 접근할 수 없다는 것을 확인할 수 있습니다.</p>
+
+<h4 id="상수-열거형-타입">상수 열거형 타입</h4>
+<hr />
+<p>열거형 타입은 컴파일 후에도 남아있다고 했습니다. 이로 인해서 번들 파일의 크기가 불필요하게 커질 수 있습니다. 열거형 타입의 객체에 접근을 하지 않을 것이라면, 컴파일 후에 굳이 객체를 남겨 놓을 필요가 없어지게 되는데, 이 때 상수 열거형 타입을 사용하면 컴파일 결과에 열거형 타입의 객체를 남겨놓지 않을 수 있습니다.</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="kr">enum</span> <span class="nx">Phone</span> <span class="p">{</span>
+  <span class="nx">Iphone</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">iphone</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">Samsung</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">samsung</span><span class="dl">'</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">iPhone</span> <span class="o">=</span> <span class="nx">Phone</span><span class="p">.</span><span class="nx">Iphone</span>
+<span class="kd">const</span> <span class="nx">galaxy</span> <span class="o">=</span> <span class="nx">Phone</span><span class="p">.</span><span class="nx">Samsung</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>컴파일 된 js파일을 확인해보면, 아까와는 달리 객체를 생성하는 코드가 보이지 않게 됩니다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">iPhone</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">iphone</span><span class="dl">"</span> <span class="cm">/* Iphone */</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">galaxy</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">samsung</span><span class="dl">"</span> <span class="cm">/* Samsung */</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>상수 열거형 타입을 모든 경우에 쓸 수 있는 것은 아니며, 열거형 타입을 상수로 정의하면 열거형 타입의 객체를 사용할 수 없게 된다.</p>
+
+<h2 id="any">Any</h2>
+<p>모든 종류의 값을 허용하는 타입입니다.
+any 타입에서는 숫자와 문자열뿐만 아니라 함수도 입력될 수 있습니다. 실제로 타입을 알 수 없는 경우나 타입이 정의가 안 된 외부 패키지를 사용하는 경우에 사용하기 좋습니다.
+다만, any 타입을 남발하면 타입스크립트를 사용하는 의미가 퇴색되기 때문에 되도록 피하는게 좋다고 생각합니다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">all</span><span class="p">:</span> <span class="kr">any</span>
+
+<span class="nx">all</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Jotang</span><span class="dl">'</span>
+<span class="nx">all</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="nx">all</span> <span class="o">=</span> <span class="kc">false</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+:ET

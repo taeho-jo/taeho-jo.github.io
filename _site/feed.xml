@@ -1,0 +1,283 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://taeho-jo.github.io</id>
+  <title>Jotang</title>
+  <subtitle>Jotang's Tech Blog React, React Native, FrontEnd Developer</subtitle>
+  <updated>2021-01-19T04:02:56+09:00</updated>
+  <author>
+    <name>Jotang</name>
+    <uri>https://taeho-jo.github.io</uri>
+  </author>
+  <link href="/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://taeho-jo.github.io" rel="alternate" type="text/html" />
+  <generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator>
+  <rights> © 2021 Jotang </rights>
+  <icon>/taeho-jo.github.io/assets/img/favicons/favicon.ico</icon>
+  <logo>/taeho-jo.github.io/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>useMemo &amp; useCallback</title>
+    <link href="https://taeho-jo.github.io/posts/useMemouseCallback/" rel="alternate" type="text/html" title="useMemo &amp; useCallback" />
+    <published>2021-01-19T03:18:00+09:00</published>
+  
+    <updated>2021-01-19T03:26:00+09:00</updated>
+  
+    <id>https://taeho-jo.github.io/posts/useMemouseCallback/</id>
+    <content src="https://taeho-jo.github.io/posts/useMemouseCallback/" />
+    <author>
+      <name>Jotang</name>
+    </author>
+
+  
+    
+    <category term="React" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      요즘 리액트로 코딩을 하면서, useCallback은 자주 사용하고, useMemo는 거의 사용하지 않고 있습니다. 사실 둘의 차이를 누가 설명하라고 하면, 정확히 할 자신이 없습니다. 지금 이 글을 작성하는 순간에도 과연 내가 이해하고 받아드린 것이 맞는지, 어떻게 사용하는 것이 좋을지에 대한 고민이 항상 함께 하고 있습니다.
+
+그래도 제가 생각하고 이해한 useMemo와 useCallback에 대해서 글을 적어보려고 합니다. 읽게 되실 누군가에게 도움이 된다면, 너무 기쁠 것이고, 누군가 읽고 제가 이해를 잘못했거나, 다르게 알고 있는 부분을 알려주신다고 하여도 너무 기쁠 것 같습니다.
+
+먼저 메모이제이션 훅이라는 아주 어려운 용어로써, 그 안에 useMemo와 useCallback이 있습니다.
+
+...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>git 저장소 history 삭제 및 초기화</title>
+    <link href="https://taeho-jo.github.io/posts/git/" rel="alternate" type="text/html" title="git 저장소 history 삭제 및 초기화" />
+    <published>2021-01-18T18:30:00+09:00</published>
+  
+    <updated>2021-01-18T18:36:50+09:00</updated>
+  
+    <id>https://taeho-jo.github.io/posts/git/</id>
+    <content src="https://taeho-jo.github.io/posts/git/" />
+    <author>
+      <name>Jotang</name>
+    </author>
+
+  
+    
+    <category term="Git" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      블로그를 새로 옮기면서, 지금 사용하고 있는 jeklly 테마의 기존 repo를 fork해서 사용을 시작했습니다.
+뭐 아직 많은 글을 올린 것은 아니지만, 올리는 와중에 보니 github의 잔디가 안 쌓이고 있었습니다.
+
+물론 잔디에 집착하면 안되겠지만…그래도 괜히 신경이 쓰이니깐…잔디를 심고싶은데..
+왜 인지 검색을 조금 해보면서, 보았던 것들을 정리하려고 글을 쓰게 되었습니다..
+
+먼저, 한 것은 사용자 정보를 확인이였습니다..
+$ git config --list
+
+
+회사 컴퓨터였다 보니, 회사 이메일 계정이 등록되어있었고, 이름 역시 본래 나의 계정과는 달라서 변경을 시도 했습니다.
+
+$ git config user.name "[이름]"
+$ git config user.email [이메일]
+
+
+변...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>TypeScript의 타입</title>
+    <link href="https://taeho-jo.github.io/posts/typescript/" rel="alternate" type="text/html" title="TypeScript의 타입" />
+    <published>2021-01-18T11:05:00+09:00</published>
+  
+    <updated>2021-01-18T11:05:00+09:00</updated>
+  
+    <id>https://taeho-jo.github.io/posts/typescript/</id>
+    <content src="https://taeho-jo.github.io/posts/typescript/" />
+    <author>
+      <name>Jotang</name>
+    </author>
+
+  
+    
+    <category term="TypseScript" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      타입스크립트의 기본 타입
+
+타입스크립트의 기본 타입은 12가지가 있습니다.
+
+
+  
+    String
+    Number
+    Boolean
+    Null
+    Undefined
+    Object
+    Array
+    Tuple
+    Void
+    Never
+    Enum
+    Any
+  
+
+
+타입 명시 (Type Annotation)
+
+변수를 선언할 때, 변수 값의 타입을 명시함으로써 변수 값의 데이터 타입을 지정하는 것입니다.
+
+// syntax
+let x: string = '나는 문자열 타입'
+
+
+위 코드에서 처럼 :를 이용해서 자바스크립트 코드에 타입을 정의하는 방식을 타입명시, 타입표기 라고 합니다
+
+String
+문자 뜻 그대로 string, 문자열을 뜻한다.
+
+let na...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>TypeScript의 시작 &amp; 개발환경 세팅하기</title>
+    <link href="https://taeho-jo.github.io/posts/typescript/" rel="alternate" type="text/html" title="TypeScript의 시작 &amp; 개발환경 세팅하기" />
+    <published>2021-01-17T18:06:00+09:00</published>
+  
+    <updated>2021-01-17T18:06:00+09:00</updated>
+  
+    <id>https://taeho-jo.github.io/posts/typescript/</id>
+    <content src="https://taeho-jo.github.io/posts/typescript/" />
+    <author>
+      <name>Jotang</name>
+    </author>
+
+  
+    
+    <category term="TypseScript" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      현재 진행하고 있는 프로젝트는 타입스크립트를 적용하지 않고 진행 중 입니다.
+
+사실, 타입스크립트를 이전부터 공부하고 사용해보고 사용하고 싶었지만, 회사에서 진행하는 프로젝트들이 적용하지 않고 진행되는 부분이 많았고,
+시간을 투자해서 공부를 하지 않았기에, 자신도 없었습니다. any만 쓸거면 그냥 안쓰는게 낫지! 하며..
+
+지금 당장 타입스크립트를 적용시킬 수는 없겠지만,
+지금부터라도 조금씩 준비하고, 공부해서 다음 프로젝트를 진행하게 될 때, “타입스크립트를 사용해서 해보겠습니다.”라고
+당당히 말할 수 있기를 바라며 공부를 해보려고 합니다.
+
+동적 타입 언어 vs 정적 타입 언어
+먼저 동적언어와 정적언어의 차이를 간단하게 알아보려고 합니다.
+
+
+  
+    
+      동적 타입 언어
+      정적...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>새로운 시작!</title>
+    <link href="https://taeho-jo.github.io/posts/firstBlog/" rel="alternate" type="text/html" title="새로운 시작!" />
+    <published>2021-01-10T18:48:00+09:00</published>
+  
+    <updated>2021-01-10T18:48:00+09:00</updated>
+  
+    <id>https://taeho-jo.github.io/posts/firstBlog/</id>
+    <content src="https://taeho-jo.github.io/posts/firstBlog/" />
+    <author>
+      <name>Jotang</name>
+    </author>
+
+  
+    
+    <category term="Daily" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      기존 gatsby블로그 에서
+
+jekyll을 이용해서 블로그를 새롭게 만들게 되었습니다.
+
+처음 개발을 시작했을 때와는 다르게, 시간이 조금 흐르면서 바쁘다는 핑계로
+
+스스로 공부하는 시간도 줄고, 자연스럽게 블로그를 올리는 일도 게을리 하게 되었습니다.
+
+2021년에는 다시 처음 시작하는 마음과 열정으로,
+
+개발을 하면서 만났던 에러들, 새롭게 알게 된 것들, 또 스스로 공부한 것들을
+
+정리하는 일을 꼭 해보려고합니다.
+
+앞으로 작성할 글들이, 부족하고 틀린 내용들이 있을 수도 있고, 여러분들의 생각과 다를 수 있을텐데,
+
+저에게 알려주시고 또 가르쳐 주신다면 감사하겠습니다.
+
+열심히 하는 개발자가 되도록 하겠습니다!
+
+    </summary>
+  
+
+  </entry>
+
+</feed>
+
+
