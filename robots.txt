@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: http://taeho-jo.github.io/sitemap.xml
+Sitemap: https://taeho-jo.github.io/sitemap.xml
