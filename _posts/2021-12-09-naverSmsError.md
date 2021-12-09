@@ -6,7 +6,7 @@ categories: [Error]
 tags: [error]
 math: true
 mermaid: true
-image: https://images.velog.io/images/jotang3726/post/23510465-8d85-4dc0-be57-ee1964bd0b5f/ERROR.png
+image: https://export-download.canva.com/8skOY/DAEyB68skOY/13/0/0001-14175729033.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJHKNGJLC2J7OGJ6Q%2F20211208%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20211208T194857Z&X-Amz-Expires=48695&X-Amz-Signature=d4bda2293b46ab2c756f47650e5a6828f5f94b55e3a598b610670e337e18f9d1&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27ERROR.png&response-expires=Thu%2C%2009%20Dec%202021%2009%3A20%3A32%20GMT
 ---
 
 
@@ -42,7 +42,7 @@ image: https://images.velog.io/images/jotang3726/post/23510465-8d85-4dc0-be57-ee
 개별 메세지를 이용하거나, 예약 문자를 이용하지 않았기 때문에 위에 나와있는 JSON의 형태로 API 통신을 진행하려고 했다.
 SMS / LMS 두 가지 TYPE은 무난히 전송되는 것은 확인하였고, 마지막으로 MMS를 보낼 때, 이미지 파일을 넣어주는 것이 남았다.
 
-![](https://images.velog.io/images/jotang3726/post/60d4773c-b5b5-4358-b9d6-e71408214342/1.png)
+![](../assets/img/blog/211209/1.png)
 위 첨부된 파일 및 NAVER SMS API 홈페이지에서도 확인 할 수 있지만, jpg 또는 jpeg 이미지를 Base64로 인코딩한 값을 전달만 해주면 되는 것이다.
 
 ```javascript
