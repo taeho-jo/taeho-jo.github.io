@@ -43,6 +43,7 @@ image: https://export-download.canva.com/8skOY/DAEyB68skOY/13/0/0001-14175729033
 SMS / LMS 두 가지 TYPE은 무난히 전송되는 것은 확인하였고, 마지막으로 MMS를 보낼 때, 이미지 파일을 넣어주는 것이 남았다.
 
 ![](https://images.velog.io/images/jotang3726/post/60d4773c-b5b5-4358-b9d6-e71408214342/1.png)
+
 위 첨부된 파일 및 NAVER SMS API 홈페이지에서도 확인 할 수 있지만, jpg 또는 jpeg 이미지를 Base64로 인코딩한 값을 전달만 해주면 되는 것이다.
 
 ```javascript
