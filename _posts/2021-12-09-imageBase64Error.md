@@ -1,5 +1,5 @@
 ---
-title: '[ERROR] Naver MMS 이미지 보내기'
+title: 에러노트 - Naver MMS 이미지 보내기
 author: Jotang
 date: 2021-12-09 16:00:00 +0900
 categories: Error
